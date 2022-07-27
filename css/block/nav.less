@@ -1,0 +1,46 @@
+// main: ../style.less
+.nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.nav__link {
+    margin-left: 2rem;
+    font-size: 0.93rem;
+    color: @black;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+
+    &:after {
+        content: "";
+        width: 0px;
+        height: 2px;
+        background-color: @black;
+        left: 0;
+        z-index: 1;
+        bottom: -5px;
+        transition: width .2s linear;
+        position: absolute;
+    }
+    &:hover::after {
+        width: 100%;
+        display: block;
+    }
+}
+.nav__link--btn {
+        padding: 0.66rem 2rem;
+        border: 2px solid @black;
+        border-radius: 20px;
+        transition: backgraund-color 0.2s linear, color 0.2s linear;
+
+        &:hover {
+        background-color: @black;
+        color: @white;
+        }
+        
+        &:hover::after {
+            display: none;
+        }
+}
